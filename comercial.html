@@ -24,11 +24,23 @@
       <li><a href="producto.html">EcoFloat</a></li>
       <li><a href="comercial.html" class="activo">Comercial</a></li>
       <li><a href="nosotros.html">Nosotros</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
+            <li id="nav-sesion"><a href="login.html">Cerrar</a></li>
+        </ul>
+    </nav>
+</header>
+<script>
+    const usuario = localStorage.getItem('bluecode_usuario');
+    const navSesion = document.getElementById('nav-sesion');
 
-  <!-- ═══ SECCIÓN COMERCIAL ═══ -->
+    if (usuario) {
+        navSesion.innerHTML = `<a href="#" onclick="cerrarSesion()">Cerrar sesión (${usuario})</a>`;
+    }
+
+    function cerrarSesion() {
+        localStorage.removeItem('bluecode_usuario');
+        window.location.href = 'login.html';
+    }
+</script>
   <section class="comercial-section">
 
     <div class="comercial-header">
