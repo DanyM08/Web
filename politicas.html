@@ -2,22 +2,129 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Políticas - BlueCode</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas y Términos - BlueCode</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
-<img src="Blue.png" alt="BlueCode" height="95">
 <body>
 
-<section class="politicas">
-    <h2>Políticas de privacidad</h2>
-    <p>En BlueCode protegemos la información de nuestros usuarios...</p>
+<header>
+    <nav class="navbar">
+        <img src="Blue.png" alt="BlueCode" height="95">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="producto.html">EcoFloat</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="hermanas.html">Paginas hermanas</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="carrito.html">🛒</a></li>
+            <li id="nav-sesion"><a href="login.html">Cerrar</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <h2>Términos y condiciones</h2>
-    <p>El uso del sistema EcoFloat implica la aceptación...</p>
+<script>
+    const usuario = localStorage.getItem('bluecode_usuario');
+    const navSesion = document.getElementById('nav-sesion');
+    if (usuario) {
+        navSesion.innerHTML = `<a href="#" onclick="cerrarSesion()">Cerrar sesión (${usuario})</a>`;
+    }
+    function cerrarSesion() {
+        localStorage.removeItem('bluecode_usuario');
+        window.location.href = 'login.html';
+    }
+</script>
 
-</section>
+<main class="container my-5 py-4 bg-white rounded-4 shadow-sm">
+    <div class="row row-gap-4">
+        
+        <aside class="col-lg-3">
+            <div class="sticky-top" style="top: 100px; z-index: 10;">
+                <h5 class="text-uppercase text-muted small fw-bold mb-3 tracking-wider">Índice del Documento</h5>
+                <div class="list-group list-group-flush summary-nav">
+                    <a href="#privacidad" class="list-group-item list-group-item-action py-2 fw-medium text-dark">1. Política de Privacidad</a>
+                    <a href="#datos-recopilados" class="list-group-item list-group-item-action py-2 ps-4 small text-secondary">— Datos Recopilados</a>
+                    <a href="#uso-informacion" class="list-group-item list-group-item-action py-2 ps-4 small text-secondary">— Uso de la Información</a>
+                    <a href="#derechos-arco" class="list-group-item list-group-item-action py-2 ps-4 small text-secondary">— Sus Derechos</a>
+                    
+                    <a href="#terminos" class="list-group-item list-group-item-action py-2 fw-medium text-dark mt-3">2. Términos y Condiciones</a>
+                    <a href="#uso-ecofloat" class="list-group-item list-group-item-action py-2 ps-4 small text-secondary">— Uso de EcoFloat</a>
+                    <a href="#propiedad-intelectual" class="list-group-item list-group-item-action py-2 ps-4 small text-secondary">— Propiedad Intelectual</a>
+                    <a href="#responsabilidad" class="list-group-item list-group-item-action py-2 ps-4 small text-secondary">— Limitación de Responsabilidad</a>
+                </div>
+            </div>
+        </aside>
+
+        <section class="col-lg-9 politicas-content px-lg-4">
+            
+            <div class="border-bottom pb-4 mb-5">
+                <h1 class="display-5 fw-bold text-navy mb-2">Políticas Legales</h1>
+                <p class="text-muted small">Última actualización: Junio de 2026</p>
+            </div>
+
+            <article id="privacidad" class="mb-5 scroll-margin">
+                <h2 class="h3 text-navy fw-bold mb-4">1. Política de Privacidad</h2>
+                <p>En <strong>BlueCode</strong>, la privacidad y protección de los datos de nuestros usuarios es una prioridad fundamental. Este documento detalla cómo recopilamos, utilizamos y resguardamos la información en nuestro sitio web y sistemas vinculados.</p>
+                
+                <div id="datos-recopilados" class="mt-4">
+                    <h4 class="h6 text-uppercase text-secondary fw-bold">A. Datos que Recopilamos</h4>
+                    <p>Recogemos información directamente cuando te registras en nuestra plataforma, utilizas el carrito de compras o interactúas con los formularios de contacto. Esto incluye:</p>
+                    <ul>
+                        <li>Información de identificación (Nombre, usuario registrado).</li>
+                        <li>Datos de contacto (Correo electrónico, teléfono).</li>
+                        <li>Datos técnicos de telemetría enviados de manera automática por el sistema <strong>EcoFloat</strong> para monitoreo de limpieza.</li>
+                    </ul>
+                </div>
+
+                <div id="uso-informacion" class="mt-4">
+                    <h4 class="h6 text-uppercase text-secondary fw-bold">B. Uso de la Información</h4>
+                    <p>Los datos recopilados se destinan exclusivamente a:</p>
+                    <ul>
+                        <li>Gestionar el acceso seguro a tu cuenta de usuario.</li>
+                        <li>Procesar solicitudes de información y compras del catálogo de tecnologías para el agua.</li>
+                        <li>Optimizar la eficiencia operativa y el mantenimiento de los sistemas EcoFloat desplegados.</li>
+                    </ul>
+                </div>
+
+                <div id="derechos-arco" class="mt-4">
+                    <h4 class="h6 text-uppercase text-secondary fw-bold">C. Sus Derechos</h4>
+                    <p>Usted mantiene en todo momento el derecho de acceder, rectificar, cancelar u oponerse al tratamiento de sus datos personales. Puede gestionar o solicitar la eliminación total de su cuenta desde el apartado de soporte o enviando una solicitud mediante nuestro formulario de contacto.</p>
+                </div>
+            </article>
+
+            <hr class="my-5 opacity-25">
+
+            <article id="terminos" class="mb-5 scroll-margin">
+                <h2 class="h3 text-navy fw-bold mb-4">2. Términos y Condiciones de Uso</h2>
+                <p>El acceso y uso de este sitio web, así como la adquisición de los sistemas de conservación acuática desarrollados por BlueCode, se rigen por las siguientes condiciones generales.</p>
+                
+                <div id="uso-ecofloat" class="mt-4">
+                    <h4 class="h6 text-uppercase text-secondary fw-bold">A. Uso del Sistema EcoFloat y Plataforma</h4>
+                    <p>Al hacer uso del ecosistema digital de BlueCode, el usuario se compromete a no realizar actividades ilícitas, alteración de los códigos de inicio de sesión o acciones que comprometan la seguridad de la base de datos de los dispositivos flotantes inteligentes.</p>
+                </div>
+
+                <div id="propiedad-intelectual" class="mt-4">
+                    <h4 class="h6 text-uppercase text-secondary fw-bold">B. Propiedad Intelectual</h4>
+                    <p>Todos los contenidos, diseños de interfaz, marcas, patentes y desarrollos técnicos relacionados con <strong>EcoFloat</strong> y la marca <strong>BlueCode</strong> son propiedad exclusiva de la empresa. Queda estrictamente prohibida su reproducción o distribución sin autorización expresa por escrito.</p>
+                </div>
+
+                <div id="responsabilidad" class="mt-4">
+                    <h4 class="h6 text-uppercase text-secondary fw-bold">C. Limitación de Responsabilidad</h4>
+                    <p>BlueCode trabaja rigurosamente en la excelencia tecnológica; sin embargo, no se hace responsable por interrupciones ajenas en la red de telecomunicaciones o por el uso indebido o malintencionado que terceros ajenos realicen con los sistemas de recolección de residuos físicos en cuerpos de agua.</p>
+                </div>
+            </article>
+
+        </section>
+    </div>
+</main>
+
+<footer>
+    © 2026 <span>BlueCode</span> — Innovación que protege el planeta.
+</footer>
 
 </body>
 </html>
