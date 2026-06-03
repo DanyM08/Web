@@ -1,0 +1,89 @@
+<section class="container my-5 py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border border-light">
+                
+                <div class="text-center mb-5">
+                    <span class="badge text-uppercase px-3 py-2 mb-2" style="background: rgba(62,109,180,0.1); color: #3e6db4; font-size: 0.7rem; letter-spacing: 1px; font-weight: 600;">Tu opinión importa</span>
+                    <h2 class="fw-bold mb-2" style="font-family: 'Cormorant Garamond', serif; color: #0d1f3c; font-size: 2.2rem;">Cuéntanos tu experiencia</h2>
+                    <p class="text-secondary small mx-auto" style="max-width: 520px;">Ayúdanos a mejorar el ecosistema digital de BlueCode y el monitoreo de EcoFloat compartiendo tus comentarios.</p>
+                </div>
+
+                <div id="mensaje-exito" class="alert alert-success d-none text-center rounded-3 border-0 py-3 mb-4" style="background-color: rgba(39, 201, 63, 0.1); color: #27c93f;">
+                    <h5 class="fw-bold mb-1">¡Muchas gracias por tu mensaje!</h5>
+                    <p class="small mb-0">Tu experiencia ha sido registrada con éxito y nos ayuda a seguir innovando.</p>
+                </div>
+
+                <form id="form-experiencia" onsubmit="enviarExperiencia(event)">
+                    <div class="row g-3">
+                        
+                        <div class="col-md-6">
+                          <label class="form-label small fw-semibold text-secondary">Nombre Completo</label>
+                          <input type="text" class="form-control px-3 py-2 rounded-3 border-light-subtle" placeholder="Ej. Carlos Mendoza" required>
+                        </div>
+
+                        <div class="col-md-6">
+                          <label class="form-label small fw-semibold text-secondary">Correo Electrónico</label>
+                          <input type="email" class="form-control px-3 py-2 rounded-3 border-light-subtle" placeholder="carlos@ejemplo.com" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label small fw-semibold text-secondary d-block">¿Cómo calificarías tu experiencia general?</label>
+                            <div class="d-flex flex-wrap gap-2 pt-1">
+                                <input type="radio" class="btn-check" name="calificacion" id="calif-1" value="Excelente" checked>
+                                <label class="btn btn-outline-secondary btn-sm px-3 rounded-pill text-xs" for="calif-1">✨ Excelente</label>
+
+                                <input type="radio" class="btn-check" name="calificacion" id="calif-2" value="Buena">
+                                <label class="btn btn-outline-secondary btn-sm px-3 rounded-pill" for="calif-2">👍 Buena</label>
+
+                                <input type="radio" class="btn-check" name="calificacion" id="calif-3" value="Regular">
+                                <label class="btn btn-outline-secondary btn-sm px-3 rounded-pill" for="calif-3">😐 Regular</label>
+
+                                <input type="radio" class="btn-check" name="calificacion" id="calif-4" value="Mala">
+                                <label class="btn btn-outline-secondary btn-sm px-3 rounded-pill" for="calif-4">👎 Mala</label>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                          <label class="form-label small fw-semibold text-secondary">Escribe tu reseña o sugerencia</label>
+                          <textarea class="form-control px-3 py-2 rounded-3 border-light-subtle" rows="4" placeholder="Cuéntanos qué te gustó de la página, el catálogo, o qué te gustaría ver en los prototipos de EcoFloat..." required></textarea>
+                        </div>
+
+                        <div class="col-12 my-2">
+                          <div class="form-check">
+                            <input class="form-check-input border-secondary-subtle" type="checkbox" id="permitirPublicar">
+                            <label class="form-check-input-label text-muted small" for="permitirPublicar">
+                              Permito que BlueCode muestre mi comentario de manera anónima en la sección de testimonios públicos.
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="col-12 text-center mt-4">
+                            <button type="submit" class="btn-enviar-experiencia">
+                                Enviar Comentarios
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function enviarExperiencia(event) {
+        event.preventDefault(); // Evita que la página se recargue
+        
+        // Aquí simularíamos guardar los datos. Por ahora, escondemos el formulario y mostramos el mensaje.
+        const formulario = document.getElementById('form-experiencia');
+        const mensajeExito = document.getElementById('mensaje-exito');
+        
+        formulario.classList.add('d-none'); // Oculta el formulario
+        mensajeExito.classList.remove('d-none'); // Muestra el mensaje verde de éxito
+        
+        // Desplazar la pantalla suavemente hacia arriba del recuadro para ver el mensaje
+        mensajeExito.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>
