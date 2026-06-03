@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas y Marco Legal – BlueCode</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <style>
+        .legal-sidebar {
+            position: sticky;
+            top: 110px;
+            height: fit-content;
+        }
+        .legal-nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 8px 12px;
+            display: block;
+            border-left: 2px solid var(--beige-mid);
+            transition: all 0.2s ease;
+        }
+        .legal-nav-link:hover {
+            color: var(--blue);
+            border-left-color: var(--blue);
+            background-color: rgba(62, 109, 180, 0.05);
+        }
+        .legal-section {
+            scroll-margin-top: 120px;
+        }
+        .badge-legal {
+            background-color: rgba(62, 109, 180, 0.1);
+            color: var(--blue);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+        .ai-tool-card {
+            background-color: var(--cream);
+            border: 1px solid var(--beige-mid);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .ai-tool-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .ai-tool-icon.gemini {
+            background-color: #e8f0fe;
+        }
+        .ai-tool-icon.claude {
+            background-color: #fef3e8;
+        }
+        .ai-tool-name {
+            font-weight: 600;
+            color: var(--navy);
+            font-size: 0.95rem;
+        }
+        .ai-tool-desc {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin: 6px 0 0;
+            line-height: 1.65;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <img src="Blue.png" alt="BlueCode" height="95">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="producto.html">EcoFloat</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="hermanas.html">Paginas hermanas</a></li>
+            <li><a href="politicas.html" class="active">Politicas</a></li>
+            <li><a href="comercial.html">Comercial</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="carrito.html">🛒</a></li>
+            <li id="nav-sesion"><a href="login.html">Cerrar</a></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    const usuario = localStorage.getItem('bluecode_usuario');
+    const navSesion = document.getElementById('nav-sesion');
+    if (usuario) {
+        navSesion.innerHTML = `<a href="#" onclick="cerrarSesion()">Cerrar sesión (${usuario})</a>`;
+    }
+    function cerrarSesion() {
+        localStorage.removeItem('bluecode_usuario');
+        window.location.href = 'login.html';
+    }
+</script>
+
+<main class="container my-5 py-4">
+    <div class="row g-5">
+
+        <!-- COLUMNA IZQUIERDA: ÍNDICE -->
+        <aside class="col-lg-3 d-none d-lg-block">
+            <div class="legal-sidebar bg-white p-4 rounded-4 shadow-sm border border-light">
+                <h5 class="fw-bold mb-3" style="font-size: 1rem; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px;">Índice Legal</h5>
+                <nav class="d-flex flex-column gap-1">
+                    <a href="#seguridad" class="legal-nav-link">1. Privacidad y Seguridad</a>
+                    <a href="#propiedad-intelectual" class="legal-nav-link">2. Propiedad Intelectual</a>
+                    <a href="#requisitos-legales" class="legal-nav-link">3. Requisitos de Autoría</a>
+                    <a href="#aviso-privacidad" class="legal-nav-link">4. Aviso de Privacidad</a>
+                    <a href="#transparencia" class="legal-nav-link">5. Transparencia y Créditos</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- COLUMNA DERECHA: CONTENIDO LEGAL -->
+        <div class="col-lg-9">
+            <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border border-light">
+
+                <div class="border-bottom pb-4 mb-5">
+                    <h1 class="fw-bold display-5 mb-2">Términos, Privacidad y Condiciones Legales</h1>
+                    <p class="text-muted small mb-0">Última actualización: Junio de 2026 | Transparencia Corporativa BlueCode</p>
+                </div>
+
+                <!-- SECCIÓN 1 -->
+                <section id="seguridad" class="legal-section mb-5">
+                    <span class="badge badge-legal px-2 py-1 mb-2 text-uppercase">Seguridad Técnica</span>
+                    <h2 class="fw-bold h3 mb-3">1. Privacidad de Datos y Seguridad en el Sitio Web</h2>
+                    <p class="text-secondary">La protección de la información dentro del ecosistema digital de BlueCode es un pilar fundamental. Aunque la plataforma actual procesa datos del lado del cliente para optimizar la velocidad y dinamismo de la interfaz, aplicamos rigurosos estándares de mitigación de riesgos:</p>
+                    <ul class="text-secondary small">
+                        <li class="mb-2"><strong>Protección en Sesiones Locales:</strong> Las variables de autenticación almacenadas en el navegador a través de <code>localStorage</code> se destruyen de forma inmediata al ejecutar la acción de cierre de sesión, bloqueando accesos no autorizados en dispositivos compartidos.</li>
+                        <li class="mb-2"><strong>Cifrado de Conexiones:</strong> El sitio web está diseñado para operar de forma exclusiva bajo el protocolo seguro <strong>HTTPS</strong>, asegurando que el flujo de información viaje encriptado mediante algoritmos robustos SSL/TLS.</li>
+                        <li class="mb-2"><strong>Sanitización de Formularios:</strong> Los módulos de mensajería y feedback implementan filtros para neutralizar vulnerabilidades de inyección de código malicioso de terceros (ataques Cross-Site Scripting).</li>
+                    </ul>
+                </section>
+
+                <hr class="my-4 text-light-subtle">
+
+                <!-- SECCIÓN 2 -->
+                <section id="propiedad-intelectual" class="legal-section mb-5">
+                    <span class="badge badge-legal px-2 py-1 mb-2 text-uppercase">Identidad</span>
+                    <h2 class="fw-bold h3 mb-3">2. Derechos de Propiedad Intelectual</h2>
+                    <p class="text-secondary">Todos los derechos de propiedad industrial e intelectual sobre el diseño gráfico, interfaces, código fuente de control y contenidos de esta plataforma pertenecen legítimamente a BlueCode.</p>
+
+                    <div class="bg-light p-3 rounded-3 mb-3 border-start border-3 border-primary-subtle">
+                        <h4 class="fw-bold h6 mb-2" style="color: var(--navy);">Origen del Diseño y Concepto</h4>
+                        <p class="text-secondary small mb-0">La interfaz web de BlueCode fue conceptualizada para plasmar el equilibrio exacto entre la ingeniería informática y el cuidado ambiental. La selección cromática del azul marino profundo proyecta seriedad industrial, mientras que las transiciones limpias reflejan la claridad y pureza de los cuerpos de agua que nuestro dispositivo EcoFloat busca preservar.</p>
+                    </div>
+
+                    <div class="bg-light p-3 rounded-3 border-start border-3 border-primary-subtle">
+                        <h4 class="fw-bold h6 mb-2" style="color: var(--navy);">Creación del Logotipo de la Marca</h4>
+                        <p class="text-secondary small mb-0">El logotipo oficial de BlueCode representa la sinergia biológica y tecnológica: fusiona de forma simétrica e iconográfica las líneas paralelas características de los lenguajes de programación estructurados con las ondas naturales del movimiento del agua. Es el símbolo visual de cómo el código puede limpiar el planeta.</p>
+                    </div>
+                </section>
+
+                <hr class="my-4 text-light-subtle">
+
+                <!-- SECCIÓN 3 -->
+                <section id="requisitos-legales" class="legal-section mb-5">
+                    <span class="badge badge-legal px-2 py-1 mb-2 text-uppercase">Autoría</span>
+                    <h2 class="fw-bold h3 mb-3">3. Requisitos Legales y Datos de Contacto</h2>
+
+                    <h4 class="fw-bold h6 mb-1 text-secondary">Identificadores de Autoría</h4>
+                    <p class="text-secondary small mb-3">La presente arquitectura digital, maquetación semántica HTML5, hojas de estilo CSS maestras y la lógica analítica de simulación han sido desarrolladas íntegramente por el Equipo de Ingeniería y Desarrollo de Software de BlueCode.</p>
+
+                    <h4 class="fw-bold h6 mb-1 text-secondary">Aviso Legal</h4>
+                    <p class="text-secondary small mb-3">El uso de este sitio web le otorga la condición de usuario e implica la aceptación total de este marco regulatorio. Toda la información comercial, precios de los modelos EcoFloat y datos técnicos derivados de pruebas (como el monitoreo satelital en la Presa del Ocotillo, Jalisco) se presentan con fines ilustrativos y de validación tecnológica, reservándonos el derecho de actualizarlos sin previo aviso.</p>
+
+                    <h4 class="fw-bold h6 mb-1 text-secondary">Información de Contacto</h4>
+                    <p class="text-secondary small mb-0">Para cualquier aclaración jurídica, ejercicio de derechos sobre sus datos o soporte comercial, favor de comunicarse a través de los canales oficiales habilitados:</p>
+                    <ul class="text-secondary small mt-2">
+                        <li><strong>Entidad Responsable:</strong> BlueCode Inc. / Proyecto de Telemetría EcoFloat</li>
+                        <li><strong>Domicilio Tecnológico:</strong> Guadalajara, Jalisco, México.</li>
+                        <li><strong>Correo Electrónico Oficial:</strong> contacto@bluecode.com</li>
+                    </ul>
+                </section>
+
+                <hr class="my-4 text-light-subtle">
+
+                <!-- SECCIÓN 4 -->
+                <section id="aviso-privacidad" class="legal-section mb-5">
+                    <span class="badge badge-legal px-2 py-1 mb-2 text-uppercase">Ley de Datos</span>
+                    <h2 class="fw-bold h3 mb-3">4. Aviso de Privacidad Integral</h2>
+
+                    <div class="border rounded-4 p-4 bg-white shadow-sm">
+                        <p class="small text-secondary mb-2"><strong>RESPONSABLE DEL TRATAMIENTO:</strong> BlueCode, con residencia operativa en Guadalajara, Jalisco, manifiesta ser el absoluto responsable del resguardo y uso legítimo de los datos personales que usted proporcione al interactuar en este sitio.</p>
+                        <p class="small text-secondary mb-2"><strong>FINALIDADES DEL TRATAMIENTO:</strong> Los datos de carácter personal recabados (específicamente Nombre completo, Dirección de Correo Electrónico y Calificaciones Cualitativas) serán utilizados con el propósito estricto de habilitar y personalizar su sesión en el menú de navegación, dar seguimiento a cotizaciones del catálogo y procesar analíticas de satisfacción sobre nuestras soluciones ecológicas.</p>
+                        <p class="small text-secondary mb-2"><strong>CONSENTIMIENTO DE PUBLICACIÓN:</strong> Al remitir formularios de opinión, si usted selecciona explícitamente la casilla de consentimiento, autoriza a BlueCode a divulgar su reseña técnica de forma totalmente anónima con fines puramente de validación comercial y de divulgación científica.</p>
+                        <p class="small text-secondary mb-0"><strong>DERECHOS ARCO:</strong> Usted goza del derecho inalienable de Acceder, Rectificar, Cancelar u Oponerse al uso de sus datos personales. Para iniciar este procedimiento formal de revocación o corrección, es necesario enviar una solicitud digital detallada al correo oficial de la empresa para que nuestro comité técnico proceda con la remoción inmediata de sus registros locales.</p>
+                    </div>
+                </section>
+
+                <hr class="my-4 text-light-subtle">
+
+                <!-- SECCIÓN 5 -->
+                <section id="transparencia" class="legal-section mb-3">
+                    <span class="badge badge-legal px-2 py-1 mb-2 text-uppercase">Ética Digital</span>
+                    <h2 class="fw-bold h3 mb-3">5. Transparencia y Atribución de Créditos</h2>
+                    <p class="text-secondary">En concordancia con las mejores prácticas de la cultura open-source y la ética profesional en tecnologías de la información, BlueCode declara y otorga los debidos reconocimientos de autoría a las herramientas externas utilizadas en la construcción de este sitio:</p>
+
+                    <ul class="text-secondary small list-unstyled d-flex flex-column gap-3 mt-3">
+                        <li>
+                            <strong class="d-block mb-1" style="color: var(--text-primary);">Frameworks de Diseño:</strong>
+                            Se hace uso de las hojas de estilo y librerías dinámicas provistas de manera abierta por <strong>Bootstrap v5.3.3</strong>, garantizando la adaptabilidad móvil de las interfaces.
+                        </li>
+                        <li>
+                            <strong class="d-block mb-1" style="color: var(--text-primary);">Tipografía e Iconografía:</strong>
+                            El renderizado tipográfico del ecosistema web es suministrado de forma libre por la infraestructura global de <strong>Google Fonts</strong> (<em>Cormorant Garamond</em> e <em>Inter</em>).
+                        </li>
+                        <li>
+                            <strong class="d-block mb-2" style="color: var(--text-primary);">Uso y Asistencia de Inteligencia Artificial:</strong>
+                            <p class="mb-3">Declaramos con total transparencia que durante el desarrollo de este sitio web se utilizaron dos modelos de Inteligencia Artificial como apoyo técnico y creativo, siempre bajo la supervisión directa del equipo de desarrollo estudiantil:</p>
+
+                            <div class="d-flex flex-column gap-3">
+                                <div class="ai-tool-card">
+                                    <div class="ai-tool-icon gemini">🔵</div>
+                                    <div>
+                                        <span class="ai-tool-name">Google Gemini</span>
+                                        <p class="ai-tool-desc">Utilizado en las etapas iniciales del proyecto para la generación y estructuración de los scripts interactivos en JavaScript (persistencia de sesión con <code>localStorage</code>), el refinamiento de selectores CSS complejos y el apoyo en la redacción formal del marco legal corporativo de este sitio.</p>
+                                    </div>
+                                </div>
+
+                                <div class="ai-tool-card">
+                                    <div class="ai-tool-icon claude">🟠</div>
+                                    <div>
+                                        <span class="ai-tool-name">Claude (Anthropic)</span>
+                                        <p class="ai-tool-desc">Empleado en fases posteriores del desarrollo para pulir y optimizar el diseño visual de las interfaces, corregir inconsistencias de maquetación, depurar bugs funcionales en el código HTML/CSS/JS y mejorar la coherencia estética general del sitio web.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    &copy; 2026 <span>BlueCode</span> — Innovación que protege el planeta.
+</footer>
+
+</body>
+</html>
