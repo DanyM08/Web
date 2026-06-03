@@ -1506,3 +1506,24 @@ footer span { color: var(--accent-light); font-weight: 600; }
     opacity: 1;
     transform: translateY(-4px);
 }
+
+/* Ajustes para la legibilidad de la página de políticas */
+.text-navy {
+    color: var(--navy);
+}
+
+.scroll-margin {
+    scroll-margin-top: 90px; /* Evita que la barra de navegación tape los títulos al hacer clic en el índice */
+}
+
+.summary-nav .list-group-item {
+    border: none;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.summary-nav .list-group-item:hover {
+    color: var(--accent) !important;
+    background-color: rgba(13, 31, 60, 0.02);
+    padding-left: 20px;
+}
