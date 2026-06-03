@@ -13,22 +13,22 @@
 </head>
 <body>
 
-  <!-- ═══ NAVBAR ═══ -->
-  <nav class="navbar">
-    
-    <a href="index.html" class="navbar-logo">Blue<span>Code</span></a>
-    <img src="Blue.png" alt="BlueCode" height="95">
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="catalogo.html">Catálogo</a></li>
-      <li><a href="producto.html">EcoFloat</a></li>
-      <li><a href="comercial.html" class="activo">Comercial</a></li>
-      <li><a href="nosotros.html">Nosotros</a></li>
-            <li id="nav-sesion"><a href="login.html">Cerrar</a></li>
-        </ul>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="navbar-logo">Blue<span>Code</span></a>
+      <img src="Blue.png" alt="BlueCode" height="95">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="producto.html">EcoFloat</a></li>
+        <li><a href="comercial.html" class="activo">Comercial</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li id="nav-sesion"><a href="login.html">Cerrar</a></li>
+      </ul>
     </nav>
-</header>
-<script>
+  </header>
+
+  <script>
     const usuario = localStorage.getItem('bluecode_usuario');
     const navSesion = document.getElementById('nav-sesion');
 
@@ -40,7 +40,8 @@
         localStorage.removeItem('bluecode_usuario');
         window.location.href = 'login.html';
     }
-</script>
+  </script>
+
   <section class="comercial-section">
 
     <div class="comercial-header">
@@ -56,33 +57,25 @@
     </div>
 
     <div class="video-shell">
-
       <div class="video-outer">
-
+        
         <div class="video-browser-bar">
           <div class="browser-dot dot-red"></div>
           <div class="browser-dot dot-yellow"></div>
           <div class="browser-dot dot-green"></div>
           <div class="browser-url">
             <div class="url-lock"></div>
-            <span class="url-text">EcoFloat</span>
+            <span class="url-text">https://www.youtube.com/watch?v=ZH0xYkTX6zo</span>
           </div>
         </div>
 
         <div class="video-ratio">
-         <iframe
+          <iframe
             src="https://www.youtube.com/embed/ZH0xYkTX6zo"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
-        </iframe>
-          <div class="video-placeholder">
-            <div class="play-ring">
-              <div class="play-triangle"></div>
-            </div>
-            <span class="placeholder-label">Tu video de YouTube va aquí</span>
-            <span class="placeholder-hint">Sustituye este bloque con el iframe embed</span>
+          </iframe>
           </div>
-        </div>
 
       </div>
 
@@ -115,7 +108,6 @@
 
   </section>
 
-  <!-- ═══ FOOTER ═══ -->
   <footer>
     &copy; 2024 <span>BlueCode</span> — Todos los derechos reservados.
     Proyecto académico CETI Río Santiago.
