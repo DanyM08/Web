@@ -1527,3 +1527,36 @@ footer span { color: var(--accent-light); font-weight: 600; }
     background-color: rgba(13, 31, 60, 0.02);
     padding-left: 20px;
 }
+
+/* Estilos para el formulario de experiencia */
+.form-control:focus {
+    border-color: #3e6db4 !important;
+    box-shadow: 0 0 0 0.25rem rgba(62, 109, 180, 0.15) !important;
+}
+
+/* Cambia el color de los botones de radio personalizados cuando se seleccionan */
+.btn-check:checked + .btn-outline-secondary {
+    background-color: #0d1f3c !important;
+    border-color: #0d1f3c !important;
+    color: #e0c998 !important; /* Texto dorado */
+}
+
+/* Botón personalizado de Envío */
+.btn-enviar-experiencia {
+    background-color: #0d1f3c;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px 35px;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-enviar-experiencia:hover {
+    background-color: #3e6db4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(62, 109, 180, 0.25);
+}
